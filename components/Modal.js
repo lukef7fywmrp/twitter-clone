@@ -99,18 +99,20 @@ function Modal() {
                     />
                     <div>
                       <div className="inline-block group">
-                        <h4 className="font-bold text-[#d9d9d9] inline-block">
+                        <h4 className="font-bold text-[#d9d9d9] inline-block text-[15px] sm:text-base">
                           {post?.username}
                         </h4>
-                        <span className="ml-1.5 text-[15px]">
+                        <span className="ml-1.5 text-sm sm:text-[15px]">
                           @{post?.tag}{" "}
                         </span>
                       </div>{" "}
                       ·{" "}
-                      <span className="hover:underline text-[15px]">
+                      <span className="hover:underline text-sm sm:text-[15px]">
                         <Moment fromNow>{post?.timestamp?.toDate()}</Moment>
                       </span>
-                      <p className="text-[#d9d9d9]">{post?.text}</p>
+                      <p className="text-[#d9d9d9] text-[15px] sm:text-base">
+                        {post?.text}
+                      </p>
                     </div>
                   </div>
 

@@ -15,7 +15,7 @@ import {
   updateDoc,
 } from "@firebase/firestore";
 import { getDownloadURL, ref, uploadString } from "@firebase/storage";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import dynamic from "next/dynamic";
 // const Picker = dynamic(() => import("emoji-picker-react"), { ssr: false });
 import { Picker } from "emoji-mart";
@@ -84,7 +84,12 @@ function Input() {
         loading && "opacity-60"
       }`}
     >
-      <img src={session.user.image} alt="" className="h-11 w-11 rounded-full" />
+      <img
+        src={session.user.image}
+        alt=""
+        className="h-11 w-11 rounded-full cursor-pointer"
+        onClick={signOut}
+      />
       <div className="divide-y divide-gray-700 w-full">
         <div className={`${selectedFile && "pb-7"} ${input && "space-y-2.5"}`}>
           <textarea
